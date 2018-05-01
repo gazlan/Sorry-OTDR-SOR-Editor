@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title>Shifting / Rotation</title>
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<div align="center">
+<table border=0 cellspacing=5 cellpadding=15 width="100%" align="left">
+
+<tr><td>
+<table border=0 cellpadding=5 cellspacing=15 align="left">
+<tr><td><a href="../../index.html"><img src="../../design/logo_mini.png" alt="Logo" width="32" height="32" border="0"></a></td><td><em><a href="../../index.html">Sorry!</a></em>&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;<em><a href="../howto.html">HowTo</a></em>&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;<em>Trace Shifting / Rotation</em></td></tr>
+</table>
+</td></tr>
+
+<tr><td>
+<div align="center"><h1>Trace Shifting / Rotation</h1></div>
+</td></tr>
+
+<tr><td>
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+<tr><td>
+<p>Прежде всего, вы должны находиться в диалоге редактирования ивента. Попасть туда можно либо из вкладки Review или Slide по правому клику мышкой (выбрать в меню Edit), либо правому/двойному клику мышкой на нужном ивенте в таблице key_events.</p>
+<br>
+<center><IMG SRC="key_events.png" WIDTH=630 HEIGHT=753 BORDER=0></center>
+<br>
+<center><IMG SRC="review.png" WIDTH=630 HEIGHT=753 BORDER=0></center>
+<br>
+<center><IMG SRC="slide.png" WIDTH=630 HEIGHT=753 BORDER=0></center>
+<br>
+<p>В открывшемся окне диалога редактирования необходимо отметить редактируемый участок трассы (сегмент).</p>
+<p>Возможны два варианта редактирования:</p>
+<p><ol>
+<li><b>Quick Edit Mode</b>
+<p>Установить левый маркер (A) на левый край участка трассы. Установить правый маркер (B) на правый край участка трассы. Нажать кнопку Shift. Нажать кнопку Save.</p>
+<p>Закрыть диалог.</p>
+<p>Нажать кнопку Write.</p>
+<br>
+<center><IMG SRC="before.png" WIDTH=630 HEIGHT=753 BORDER=0></center>
+<br>
+<center><IMG SRC="set a.png" WIDTH=924 HEIGHT=869 BORDER=0></center>
+<br>
+<center><IMG SRC="set b.png" WIDTH=925 HEIGHT=866 BORDER=0></center>
+<br>
+<center><IMG SRC="shift.png" WIDTH=925 HEIGHT=869 BORDER=0></center>
+<br>
+<center><IMG SRC="shift done.png" WIDTH=925 HEIGHT=866 BORDER=0></center>
+<br>
+<center><IMG SRC="after.png" WIDTH=630 HEIGHT=753 BORDER=0></center>
+<br>
+</p></li>
+<p><li><b>Full Edit Mode</b>
+<p>Зажав левую кнопку мыши нарисовать на трассе прямоугольник (Zoom Box).</p>
+<p>Левая вертикальная стенка прямоугольника должна соответствовать положению левого маркера (левый край участка трассы), а правая вертикальная стенка - положению правого маркера (правый край участка трассы).</p>
+<br>
+<center><IMG SRC="zoom box.png" WIDTH=925 HEIGHT=869 BORDER=0></center>
+<br>
+<p>Отпустить левую кнопку мышки - появится диалог редактирования сегмента трассы (Segment Processor)</p>
+<br>
+<center><IMG SRC="segment processor.png" WIDTH=674 HEIGHT=542 BORDER=0></center>
+<br>
+<p>В этом диалоге нужно выбрать подходящее действие и, если, требуется, указать для него дополнительные параметры.</p>
+<p>Например, Flip (переворот) может быть горизонтальным или вертикальным или одновременным в обоих направлениях.</p>
+<br>
+<center><IMG SRC="flip both.png" WIDTH=674 HEIGHT=542 BORDER=0></center>
+<br>
+<p>Нажать кнопку Go!</p>
+<br>
+<center><IMG SRC="go.png" WIDTH=674 HEIGHT=542 BORDER=0></center>
+<br>
+<p>Насладиться результатом</p>
+<br>
+<center><IMG SRC="flip done.png" WIDTH=926 HEIGHT=871 BORDER=0></center>
+<br>
+<p>Нажать кнопку Save.</p>
+<p>Закрыть диалог.</p>
+<p>Нажать кнопку Write.</p>
+<p>Убедиться, что в выходном файле сохранена отредактированная трасса</p>
+<br>
+<center><IMG SRC="review flip.png" WIDTH=630 HEIGHT=753 BORDER=0></center>
+<br>
+</li>
+</ol>
+<p><b>Еще раз об идеологии редактора</b></p>
+<p><ol>
+<li>Оригинальный SOR-файл открывается только на чтение и НЕ перезаписывается, если только это не будет задано явно.</li>
+<li>Вся работа по редактированию производится над ОБРАЗОМ SOR-файла во внутреннем формате редактора Sorry!</li>
+<li>Ничего НЕ сохраняется, пока не нажата кнопка Save.</li>
+<li>Нажатие кнопки Save сохраняет изменения ТОЛЬКО во внутреннем ОБРАЗЕ, ничего не пишется в файл, пока не нажата кнопка Write.</li>
+<li>Нажатие кнопки Write записывает внутренний образ в дисковый файл в формате .SOR. По умолчанию, это новый файл (с суффиксом _new).</li>
+</ol></p>
+<p>Настоятельно рекомендуется НЕ перезаписывать оригинальные файлы, а после любого редактирования сохранять изменения в новый файл.</p>
+<p></p>
+<p>В силу указанных особенностей работы редактора (двухфазное редактирование), возможны незначительные различия между экранным представлением и дисковым SOR-файлом.</p>
+<p>При визуальном редактировании, фактически, выполняется модификация только ограниченного по размеру образа в памяти (во внутреннем формате редактора Sorry!). При этом все выполняемые действия записываются как макрокоманды.</p>
+<p>При нажатии на кнопку Write, все записанные макрокоманды "проигрываются" для полноразмерного дискового файла. Вследствие разницы размеров экранного буфера (режим симуляции) и полного файла (реальный режим), при вычислении коэффициентов сдвига а реальном режиме, возможно их незначительное отличие от тех же коэффициентов, вычисленных в режиме симуляции, что может привести к малозаметным различиям в представлении трассы в реальном режиме по отношению к режиму симуляции.</p>
+</table>
+</td></tr>
+
+<tr><td>
+<hr>
+<em>&copy; Gazlan, 2018 * gazlan@yandex.ru</em>
+<hr>
+</td></tr>
+
+</body>
+</html>

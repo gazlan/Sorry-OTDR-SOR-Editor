@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title>Smart timing</title>
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<div align="center">
+<table border=0 cellspacing=5 cellpadding=15 width="100%" align="left">
+
+<tr><td>
+<table border=0 cellpadding=5 cellspacing=15 align="left">
+<tr><td><a href="../../../index.html"><img src="../../../design/logo_mini.png" alt="Logo" width="32" height="32" border="0"></a></td><td><em><a href="../../../index.html">Sorry!</a></em>&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;<a href="../dox.html">Sorry! on-line manual<a>&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;<em>Smart timing</em></td></tr>
+</table>
+</td></tr>
+
+<tr><td>
+<div align="center"><h1>Smart timing</h1></div>
+</td></tr>
+
+<tr><td>
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+<tr><td>
+
+<p>SOR-file имеет две отметки времени (TimeStamp): внешнюю, проставляемую, как и у всех других файлов, операционной системой (OS) и внутреннюю, проставляемую в момент создания рефлектометром. Внешняя отметка может редактироваться файловыми менеджерами (или иными утилитами), внутренняя доступна только для редактора Sorry!</p>
+<p>File timestamp (отметка OS - дата-время создания файла) может отслеживать по выбору timestamp оригинального файла или отметку времени загловка SOR-файла (вкладка Fixed I). Эта отметка будет установлена в момент сохранения отредактированного файла (после нажатия Write).</p>
+<CENTER><IMG SRC="timing_00.png" WIDTH=630 HEIGHT=753 BORDER=0></CENTER>
+<br>
+<CENTER><IMG SRC="timing_01.png" WIDTH=630 HEIGHT=753 BORDER=0></CENTER>
+<p>Управление опциями тайминга возможно как на вкладке Fixed I, так и из диалога Options. Переход в диалог Options - из системного меню.</p>
+<CENTER><IMG SRC="timing_02.png" WIDTH=630 HEIGHT=753 BORDER=0></CENTER>
+<p>При необходимости, может быть задана задержка (сдвиг по времени) относительно выбранного базового времени, например, запаздывание относительно заголовка SOR-файла. Эта величина различна для различных производителей (обычно, в пределах 0..7 минут). Кроме того, может быть включена опция случайного запаздывания в пределах 30 сек. При обработке серии файлов их временные отметки будут сдвинуты на эту случайную величину.</p>
+<CENTER><IMG SRC="timing_03.png" WIDTH=580 HEIGHT=568 BORDER=0></CENTER>
+<p>Опция Time Zone shift позволяет компенсировать сдвиг локального времени относительно UTC (поправка должна быть взята с обратным знаком). Например, если локальное время +02:00, то поправка должна быть -2.</p>
+<p>Правка Time Zone обычно не требуется, если запись файлов рефлектометром и их редактирование на компьютере производятся в том же самом часовом поясе.</p>
+
+</td></tr>
+
+</table>
+</td></tr>
+
+<tr><td>
+<hr>
+<em>&copy; Gazlan, 2017 * gazlan@yandex.ru</em>
+<hr>
+</td></tr>
+
+</body>
+</html>

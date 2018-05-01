@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title>Segment Processor</title>
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<div align="center">
+<table border=0 cellspacing=5 cellpadding=15 width="100%" align="left">
+
+<tr><td>
+<table border=0 cellpadding=5 cellspacing=15 align="left">
+<tr><td><a href="../../../index.html"><img src="../../../design/logo_mini.png" alt="Logo" width="32" height="32" border="0"></a></td><td><em><a href="../../../index.html">Sorry!</a></em>&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;<a href="../dox.html">Sorry! on-line manual<a>&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;<em>Segment Processor</em></td></tr>
+</table>
+</td></tr>
+
+<tr><td>
+<div align="center"><h1>Segment Processor</h1></div>
+</td></tr>
+
+<tr><td>
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+<tr><td>
+
+<p>Segment Processor доступен из диалога Event Info.</p>
+<CENTER><IMG SRC="sp_0.png" WIDTH=674 HEIGHT=628 BORDER=0></CENTER>
+<p>Вызов:</p>
+<ul>
+<li>вкладка КеуEvents - двойной клик на ивенте в таблице ивентов</li>
+<li>В диалоге редактирования ивента мышкой - левый клик - рисуем прямоугольник в окошке 2D-редактора</li>
+<p>Левая сторона прямоугольника обозначает начальную позицию (Start), правая сторона задает размер области редактирования (Size)</p>
+</ul>
+<p></p>
+<p>Реализованы почти все основные примитивы конструирования трассы.</p>
+<ul>
+<li>LSA - Расчет методом пяти курсоров</li>
+<li>Move - Вставка/удаление участка трассы.<br><br>
+<p>Координаты сдвига вычисляются по отрисованному мышкой прямоугольнику (ZoomBox). Их четыре: top / bottom / left / right.</p>
+<p>При сдвиге используются только две из них.</p>
+<p>Когда выбирается горизонтальный сдвиг, то он выполняется на величину (right - left), когда вертикальный - (bottom - top).</p>
+<p>Иными словами, при сдвиге одна стенка ZoomBox должна прикасаться к той точке трассы, от которой производится сдвиг, а противоположная ей станет той точкой, в которую трасса будет сдвинута.</p>
+<p>При горизонтальном сдвиге игнорируется высота ZoomBox (bottom - top), при вертикальном сдвиге, соответственно, ширина ZoomBox (right - left).</p>
+<br>
+<CENTER><IMG SRC="sp_move_0.png" WIDTH=926 HEIGHT=916 BORDER=0></CENTER>
+<p>При перемещении влево отмеченный блок трассы удаляется и ТЕРЯЕТСЯ, трасса сдвигается справа-налево на размер Size, остаток трассы (за хвостом) забивается фейковым значением, полный размер (километраж) трассы НЕ изменяется</p>
+<CENTER><IMG SRC="sp_move_left.png" WIDTH=926 HEIGHT=916 BORDER=0></CENTER>
+<p>При перемещении вправо отмеченный блок трассы сдвигается направо, хвост трассы, вышедший за пределы километража ТЕРЯЕТСЯ, трасса сдвигается слева-направо на размер Size, опустевший (слева) участок забивается фейковым значением, полный размер (километраж) трассы НЕ изменяется</p>
+<CENTER><IMG SRC="sp_move_right.png" WIDTH=926 HEIGHT=916 BORDER=0></CENTER><br><br></li>
+<li>Copy-on-Move</p>
+<CENTER><IMG SRC="sp_copy_on_move_0.png" WIDTH=926 HEIGHT=916 BORDER=0></CENTER><br>
+<CENTER><IMG SRC="sp_copy_on_move_right.png" WIDTH=926 HEIGHT=916 BORDER=0></CENTER><br><br></li>
+<li>Flip - Зеркальное (вертикальное и горизонтальное) отражение отмеченного сегмента. Размер трассы НЕ изменяется.</p>
+<CENTER><IMG SRC="sp_flip_0.png" WIDTH=926 HEIGHT=916 BORDER=0></CENTER>
+<p>горизонтальное отражение</p>
+<CENTER><IMG SRC="sp_flip_horizontal.png" WIDTH=926 HEIGHT=916 BORDER=0></CENTER>
+<p>вертикальное отражение</p>
+<CENTER><IMG SRC="sp_flip_vertical.png" WIDTH=926 HEIGHT=916 BORDER=0></CENTER><br><br></li>
+<li>Rotate - Аналогично, вращение (по и против часовой стрелки) на заданный угол. Размер трассы НЕ изменяется.</li>
+</ul>
+
+</td></tr>
+
+</table>
+</td></tr>
+
+<tr><td>
+<hr>
+<em>&copy; Gazlan, 2017 * gazlan@yandex.ru</em>
+<hr>
+</td></tr>
+
+</body>
+</html>

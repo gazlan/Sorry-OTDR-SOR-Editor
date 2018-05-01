@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title>Sorry! on-line manual</title>
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<div align="center">
+<table border=0 cellspacing=5 cellpadding=15 width="100%" align="left">
+
+<tr><td>
+<table border=0 cellpadding=5 cellspacing=15 align="left">
+<tr><td><a href="../../index.html"><img src="../../design/logo_mini.png" alt="Logo" width="32" height="32" border="0"></a></td><td><em><a href="../../index.html">Sorry!</a></em>&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;<em>Sorry! on-line manual</em></td></tr>
+</table>
+</td></tr>
+
+<tr><td>
+<div align="center"><h1>Sorry! on-line manual</h1></div>
+</td></tr>
+
+<tr><td>
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+<tr><td>
+
+<br>
+<h2>Почему Sorry!?</h2>
+<p>На это есть три причины:</p>
+<ul>
+<li><b><i>S</i></b> и <b><i>R</i></b> - стандартные обозначения начала и конца кабеля</li>
+<li><b><i>.SOR</i></b> - расширение формата, и программы просмотра часто включают расширение, как часть своего названия</li>
+<li>Многие фирмы-производители &quot;железа&quot; выпускают сопутствующий софт
+для работы с их оборудованием. Нередко, остается впечатление, что написан он 
+студентами, нанятыми &quot;на сдачу&quot;. Вплоть до того, что программы 
+просмотра не открывают SOR-файлы от рефлектометров того же вендора</li>
+</ul>
+<CENTER><IMG SRC="noyes1.png" WIDTH=800 HEIGHT=486 BORDER=0></CENTER>
+<p><center><b><i>Sorry!</i></b> - это мой протест против многомегабайтных программ с функциональностью на два цента.</center></p>
+<CENTER><IMG SRC="noyes2.png" WIDTH=630 HEIGHT=753 BORDER=0></CENTER>
+<br>
+<h2>Назначение</h2>
+<p>Sorry! позиционируется как компактный, работающий с любого носителя, 
+исключительно быстрый вьювер и, одновременно, редактор SOR-файлов, с полным 
+доступом на чтение/запись ко всем полям стандартных блоков, raw-дампером 
+любых блоков (включая проприетарные), валидатором внутренних структур, 
+поддержкой групповой обработки (batch), специализированным 2D-редактором 
+для интерактивного редактирования трассы (с опцией 2D-печати на любой 
+установленный в системе принтер), однострочным скобочным калькулятором 
+и открытой архитектурой, позволяющей расширение функциональности за счет 
+плагинов.</p>
+<br>
+<h2>Идеология редактора</h2>
+<p>Несмотря на то, что Sorry! предназначена просмотра и редактирования 
+SOR-файлов, за исключением того, что каждому стандартному блоку назначен 
+свой класс, .SOR-формат мало связан с внутренним представлением данных. 
+Sorry! открывает файл в режиме ReadOnly, десериализует, создавая внутреннюю 
+структуру (multiway tree) в памяти и немедленно закрывает. После этого 
+исходный файл может быть свободно удален, перемещен, открыт в другой 
+программе просмотра/редактирования - для работы Sorry! это неважно.</p>
+<p>Все изменения, производимые при редактировании в программе Sorry! 
+выполняются над внутренними структурами и не затрагивают оригинальный 
+файл. Только при нажатии кнопки 'Write' происходит обратная сериализация 
+данных и запись в дисковый файл.</p>
+<p>Эта техника относится ко всем блокам, исключая Data points. Единицей 
+редактирования трассы является выделенный (маркерами или мышью) сегмент, и 
+для его редактирования создается отдельная копия данных во внутреннем буфере. 
+Таким образом, выход из диалога редактирования сегмента без сохранения 
+отменяет все сделанные изменения и оригинальная трасса остается нетронутой.</p>
+<br>
+<h2>Под капотом SOR-файла</h2>
+<p>Формально, .SOR-файл - это serialized multiway tree. Но не ищите этих слов в документации, их там нет. Возможно, инженеры Tellcordia (первоначального разработчика формата) и вовсе не оперировали категорией ADT, и это одна из причин, почему формат с более чем десятилетней историй все еще так плох и невнятен.</p>
+<p>Надо сказать, что по сравнению с некоторыми другими форматами, SOR-файл устроен достаточно примитивно. Например, в нем отсутствует динамическое сжатие диапазона (a la Dolby noise-reduction system).</p>
+<p>Обсуждение некоторых странностей формата можно найти в блоге компании Fiberizer (<a href="http://fiberizer.com/fiber-optic-blog/postid/8/otdr-sor-format-vagueness#disqus_thread" rel="nofollow">OTDR sor format vagueness</a>), а вот выдержка из документации к программе <a href="https://www.fiberdoc.de/index.php/en" rel="nofollow">Fiberdoc</a>:</p>
+<p>
+<pre>
+&gt;     Important notes:
+&gt;
+&gt;     Unfortunately the current definitions of the Bellcore/Telcordia
+&gt;     standards are not fully clear, which results in various
+&gt;     misunderstandings in the implementation. Though FiberDoc tolerates
+&gt;     some 'derivatives' of the standard, there is neither any guarantee,
+&gt;     that Bellcore files of all suppliers can be read, nor can it be
+&gt;     assured, that Bellcore files created by FiberDoc are readable by
+&gt;     OTDR's or evaluation software of other suppliers.
+</pre>
+</p>
+<p>Основным источником сведений по устройству SOR-файла (не считая, конечно,
+найденных "in wilde" интересных экземпляров) является стандарт от Bellcore.
+Он малодоступен ($700), и специфика отрасли (<i>сварщики - не программисты</i>)
+способствует тому, что на рынке практически нет предложений пригодных для использования
+программ просмотра и редактирования рефлектограмм. Кроме того, не все вендоры
+тщательно следуют стандарту и почти все расширяют его собственными проприетарными
+блоками (вплоть до потери совместимости).</p>
+<p>Как уже говорилось, SOR-файл - это serialized multiway tree. Узлы (блоки)
+записываются в выходной поток последовательно, размеры зависят от данных,
+порядок почти произволен (блок индексов - Map - должен быть первым в потоке, 
+а блок CkSum, если представлен, для упрощения реализации, записывается последним).
+Стандарт требует четырех обязательных блоков (включая Map), остальные, включая 
+проприетарные, оставлены на усмотрение вендора. Так же, по собственному усмотрению,
+в нарушение стандарта, большинство вендоров реализует и расчет контрольной суммы 
+(CkSum), вероятно, с целью выявления несанкционированной модификации SOR-файлов.
+Во всяком случае, программы и "железо" от таких производителей используют 
+несовпадающие алгоритмы, так что файл не может быть корректно подписан даже
+после обработки в программе того же вендора.</p>
+
+<br>
+
+<h2>Описание интерфейса программы</h2>
+
+<br>
+
+<ul>
+<li>SysMenu</li>
+<li>File info</li>
+<li>Slide tab (Стартовый экран программы)</li>
+<li><a href="review/review.html">Review tab</a></li>
+<li><a href="pinup/pinup.html">Фиксация центра кадра</a></li>
+<li><a href="event_info/event_info.html">Event Info</a></li>
+<li><a href="segment_processor/segment_processor.html">Segment Processor</a></li>
+<li>GenParams tab</li>
+<li>SupParams tab</li>
+<li>FixParams I tab</li>
+<li><a href="timing/timing.html">Smart timing</a></li>
+<li>FixParams II tab</li>
+<li>KeyEvents tab</li>
+<li>DataPts tab</li>
+<li>Pulses dialog</li>
+<li>LinkParams tab</li>
+<li>Analysis tab</li>
+<li>Scratch tab</li>
+<li>ScriptBuilder tab</li>
+<li>Owner tab</li>
+<li>Stego tab</li>
+<li>Plugins</li>
+<li>Digital signature</li>
+<li>Proprietary blocks</li>
+<li><a href="../calc/calc.html">Single line calculator</a></li>
+<li><a href="../sdk/sdk.html">Plugin's SDK</a></li>
+<li><a href="../options/options.html">Проблемы совместимости</a></li>
+</ul>
+
+</td></tr>
+
+</table>
+</td></tr>
+
+<tr><td>
+<hr>
+<em>&copy; Gazlan 2014 * gazlan@yandex.ru</em>
+<hr>
+</td></tr>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title>Sorry! SDK</title>
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<div align="center">
+<table border=0 cellspacing=5 cellpadding=15 width="100%" align="left">
+
+<tr><td>
+<table border=0 cellpadding=5 cellspacing=15 align="left">
+<tr><td><a href="../../index.html"><img src="../../design/logo_mini.png" alt="Logo" width="32" height="32" border="0"></a></td><td><a href="../../index.html">Sorry!</a></em>&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;<em>Sorry! SDK</em></td></tr>
+</table>
+</td></tr>
+
+<tr><td>
+<div align="center"><h1>Sorry! SDK</h1></div>
+</td></tr>
+
+<tr><td>
+<div align="center"><i>* В квадратных скобках указаны коды по SR_4731.i02 (OTDR) Data Format</i></div>
+</td></tr>
+
+<tr><td>
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+
+<tr><td>
+<div align="center">
+<h2>CHK - функции для работы с контрольной суммой</h2>
+<table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
+<tr><td><b>CHK_GetCkSumOriginal</b></td><td>Получить контрольную сумму SOR-файла (считывается при открытии SOR-файла для редактирования) [CSM]</td></tr>
+<tr><td><b>CHK_SetCkSum</b></td><td>Установить контрольную сумму SOR-файла (обычно не требуется, значение контрольной суммы обновляется автоматически при вызове KRNL_Write и KRNL_WriteFile) [CSM]</td></tr>
+<tr><td><b>CHK_FixCkSum</b></td><td>Установить контрольную сумму SOR-файла[CSM]</td></tr>
+</table>
+</div>
+</td></tr>
+
+<tr><td>
+<div align="center">
+<h2>DB - функции для работы с базой данных Sorry!</h2>
+<table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
+<tr><td><b>DB_KillSession</b></td><td>Удаление записи с параметрами сессии</td></tr>
+<tr><td><b>DB_LoadSession</b></td><td>Извлечение записи с параметрами сессии</td></tr>
+<tr><td><b>DB_SaveSession</b></td><td>Сохранение записи с параметрами сессии</td></tr>
+</table>
+</div>
+</td></tr>
+
+<tr><td>
+<div align="center">
+<h2>DIR - функции для работы с директориями</h2>
+<table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
+<tr><td><b>DIR_BrowseForFolder</b></td><td>Диалог выбора директории</td></tr>
+</table>
+</div>
+</td></tr>
+
+<tr><td>
+<div align="center">
+<h2>FILE - функции для работы с файлами</h2>
+<table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
+<tr><td><b>FILE_GetLatestFileTimeByHandle</b></td><td>Получить время последней модификации файла</td></tr>
+<tr><td><b>FILE_GetLatestFileTimeByName</b></td><td>Получить время последней модификации файла</td></tr>
+<tr><td><b>FILE_OpenFileReadOnly</b></td><td>Открыть файл в режиме "только чтение"</td></tr>
+<tr><td><b>FILE_SetFileTSbyHandle</b></td><td>Установить TimeStamp для заданного файла</td></tr>
+<tr><td><b>FILE_SetFileTSbyName</b></td><td>Установить TimeStamp для заданного файла</td></tr>
+<tr><td><b>FILE_SetFileTimeStampUTC</b></td><td>Установить UTC TimeStamp для заданного файла</td></tr>
+</table>
+</div>
+</td></tr>
+
+<tr><td>
+<div align="center">
+<h2>FXD - Fixed Parameters Block</h2>
+<table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
+<tr><td><b>FXD_GetSorTime</b></td><td>Получить текущее значение времени создания рефлектограммы [DTS]</td></tr>
+<tr><td><b>FXD_GetSorTimeOriginal</b></td><td>Получить оригинальное значение времени создания рефлектограммы (считывается при открытии SOR-файла для редактирования)</td></tr>
+<tr><td><b>FXD_SetSorTime</b></td><td>Установить время создания рефлектограммы [DTS]</td></tr>
+</table>
+</div>
+</td></tr>
+
+<tr><td>
+<div align="center">
+<h2>KRNL - Sorry! kernel functions</h2>
+<br>
+<table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
+
+<tr><td><b>KRNL_AppendBlackList</b></td><td>Добавить имя блока в 'черный' список</td></tr>
+<tr><td><b>KRNL_AppendWhiteList</b></td><td>Добавить имя блока в 'белый' список</td></tr>
+<tr><td><b>KRNL_ClearBlackList</b></td><td>Очистить 'черный' список</td></tr>
+<tr><td><b>KRNL_ClearWhiteList</b></td><td>Очистить 'белый' список</td></tr>
+<tr><td><b>KRNL_EnsureWhiteList</b></td><td>Оставить только блоки с именами из 'белого' списка и стандартные блоки</td></tr>
+<tr><td><b>KRNL_GetFileTime</b></td><td>Получить (UTC) время последней модификации SOR-файла</td></tr>
+<tr><td><b>KRNL_GetPluginPath</b></td><td>Получить полный путь к директории, из которой запущен plugin</td></tr>
+<tr><td><b>KRNL_Load</b></td><td>Загрузить SOR-файл для редактирования</td></tr>
+<tr><td><b>KRNL_Save</b></td><td>Сохранить SOR-файл с текущим именем (оригинальный файл будет перезаписан)</td></tr>
+<tr><td><b>KRNL_SetFileTime</b></td><td>Установить (UTC) время последней модификации SOR-файла</td></tr>
+<tr><td><b>KRNL_SetSilenceMode</b></td><td>Включить/Выключить обновление вкладок просмотра свойств SOR-файла (отключение визуализации ускоряет групповую обработку)</td></tr>
+<tr><td><b>KRNL_StripBlackList</b></td><td>Удалить блоки с именами из 'черного' списка</td></tr>
+<tr><td><b>KRNL_Time_Local_2_Local</b></td><td>Конвертировать локальное время между двумя временными зонами</td></tr>
+<tr><td><b>KRNL_Time_Local_2_UTC</b></td><td>Конвертировать локальное время в UTC</td></tr>
+<tr><td><b>KRNL_Time_UTC_2_Local</b></td><td>Конвертировать UTC в локальное время</td></tr>
+<tr><td><b>KRNL_Walker</b></td><td>Рекурсивный обход всех SOR-файлов внутри заданного каталога и его вложенных подкаталогов</td></tr>
+<tr><td><b>KRNL_Write</b></td><td>Диалог сохранения SOR-файла на диск</td></tr>
+<tr><td><b>KRNL_WriteFile</b></td><td>Сохранение SOR-файла на диск с заданным именем</td></tr>
+</table>
+</div>
+</td></tr>
+
+<tr><td>
+<div align="center">
+<h2>MAP - Internal File Info</h2>
+<br>
+<table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
+<tr><td><b>MAP_CalcHash16</b></td><td>Вычислить Hash SOR-файла</td></tr>
+<tr><td><b>MAP_CalcHash16File</b></td><td>Вычислить Hash указанного SOR-файла</td></tr>
+<tr><td><b>MAP_GetFileMD5SignatureOriginal</b></td><td>Получить MD5 сигнатуру SOR-файла (вычисляется при открытии SOR-файла для редактирования)</td></tr>
+</table>
+</div>
+</td></tr>
+
+<tr><td>
+<div align="center">
+<h2>OPT - Работа с параметрами сессии</h2>
+<br>
+<table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
+<tr><td><b>OPT_GetTimeZoneShift</b></td><td>Получить временной сдвиг TimeZone сессии относительно GMT</td></tr>
+<tr><td><b>OPT_SetFixedDelayMin</b></td><td>Установить фиксированную задержку записи, min</td></tr>
+<tr><td><b>OPT_SetFixedDelayRandom</b></td><td>Установить фиксированную задержку записи</td></tr>
+<tr><td><b>OPT_SetFixedDelaySec</b></td><td>Установить фиксированную задержку записи, sec</td></tr>
+<tr><td><b>OPT_SetFixedTSstrType</b></td><td>Установить тип записи TimeStamp</td></tr>
+<tr><td><b>OPT_SetTimeZoneShift</b></td><td>Установить временной сдвиг TimeZone сессии относительно GMT (имеет смысл, если рефлектограмма снималась и обрабатывается в разных временных зонах)</td></tr>
+</table>
+</div>
+</td></tr>
+
+</td></tr>
+
+</table>
+</td></tr>
+
+<tr><td>
+<hr>
+<em>&copy; Gazlan 2014 * gazlan@yandex.ru</em>
+<hr>
+</td></tr>
+
+</body>
+</html>

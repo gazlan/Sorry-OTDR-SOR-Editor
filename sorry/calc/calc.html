@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title>Sorry! built-in calculator</title>
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<div align="center">
+<table border=0 cellspacing=5 cellpadding=15 width="100%" align="left">
+
+<tr><td>
+<table border=0 cellpadding=5 cellspacing=15 align="left">
+<tr><td><a href="../../index.html"><img src="../../design/logo_mini.png" alt="Logo" width="32" height="32" border="0"></a></td><td><em><a href="../../index.html">Sorry!</a></em>&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;<em>Calc</em></td></tr>
+</table>
+</td></tr>
+
+<tr><td>
+<div align="center"><h1>Sorry! Работа с калькулятором</h1></div>
+</td></tr>
+
+<tr><td>
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+<tr><td>
+
+<pre>
+Для удобства расчетов, связанных с параметрами ивентов, вкладка EventInfo
+снабжена встроенным однострочным калькулятором, способным выполнять четыре
+основных арифметических действия (сложение/умножение/вычитание/деление) и
+вычисление нескольких часто используемых функций.
+
+
+   <B><I>TIP:</I></B>
+
+      <EM>Промежуточные результаты вычислений можно сохранять в поле комментария.
+      В это же поле можно записать и часто используемые формулы. При нажатии
+      на кнопку 'Save' они будут сохраняться в этом поле до окончания работы
+      с файлом (или до удаления данного ивента). Если же кроме 'Save' нажать
+      еще и 'Write', то эта запись будет сохранена в файле вместе с ивентом.
+      </EM>
+
+
+<STRONG>Полный список используемых мнемоник</STRONG> (регистр неважен):
+
+
+   +           Сложение
+   -           Вычитание
+   *           Умножение
+   /           Деление
+   \           Деление по модулю (получение остатка)
+   ^           Возведение в произвольную степень
+
+
+<STRONG>Вычисление математических функций:</STRONG>
+
+
+   sin(x)
+   cos(x)
+   atan(x)
+   abs(x)
+   sqrt(x)
+   ln(x)
+   exp(x)
+
+
+<STRONG>Специальные функции</STRONG>, для вычисления параметров точек трассы, указанных
+положениями маркеров в 2D-редакторе:
+
+
+   left(method)         Допустимые значения для метода:  2PA / SLOPE / LSA
+   right(method)        Допустимые значения для метода:  2PA / SLOPE / LSA
+   shift(method)        Допустимые значения для метода:  2PA / LSA
+   loss(method)         Допустимые значения для method:  2PA / LSA
+   event(method)        Допустимые значения для метода:  SLOPE / LSA
+   cross(side,marker)   Допустимые значения для side:    LEFT / RIGHT,
+                        значения для аргумента marker:   A / B.
+
+
+При изменении положения маркеров и связанных с ними значений для точек
+трассы, при нажатии кнопки '=', в вычисляемое выражение автоматически
+будут подставлены новые значения соответствующих величин.
+
+Для метода 2PA выбор между функциями shift() и loss() безразличен -
+обе вернут то же самое значение. Для метода LSA функция shift()
+возращает разность условных уровней сигнала (отнесенную к нулю отсчета),
+а функция loss() вернет значение затухания на ивенте (вычисляемое как
+дмагональная разность верхнего-левого и нижнего-правого углов прямоугольника,
+образованного двумя маркерами A и B).
+
+<STRONG><EM>Примеры:</EM></STRONG>
+
+<strong>01.</strong>
+<center><img src="01_left_2pa.png" width=926 height=916 border=0></center>
+<strong>02.</strong>
+<center><img src="02_left_slope.png" width=926 height=916 border=0></center>
+<strong>03.</strong>
+<center><img src="03_left_lsa.png" width=926 height=916 border=0></center>
+<strong>04.</strong>
+<center><img src="04_right_2pa.png" width=926 height=916 border=0></center>
+<strong>05.</strong>
+<center><img src="05_right_slope.png" width=926 height=916 border=0></center>
+<strong>06.</strong>
+<center><img src="06_right_lsa.png" width=926 height=916 border=0></center>
+<strong>07.</strong>
+<center><img src="07_event_slope.png" width=926 height=916 border=0></center>
+<strong>08.</strong>
+<center><img src="08_event_lsa.png" width=926 height=916 border=0></center>
+<strong>09.</strong>
+<center><img src="09_two_power.png" width=926 height=916 border=0></center>
+<strong>10.</strong>
+<center><img src="10_sin_pi_4.png" width=926 height=916 border=0></center>
+<strong>11.</strong>
+<center><img src="11_sin^2_plus_cos^2.png" width=926 height=916 border=0></center>
+
+
+<H1>Определение затухания на ивенте</H1>
+
+Расчет затухания на ивенте может быть скорее искусством, чем наукой и, в любом
+случае, носит приближенный характер.
+
+На практике используются два метода:
+
+   -  Метод двух курсоров (2PA) и
+   -  Метод пяти курсоров (LSA).
+
+<CENTER><IMG SRC="2pa.png" WIDTH=800 HEIGHT=270 BORDER=0></CENTER>
+
+В методе двух курсоров (2PA), затухание определяется как разность уровней
+сигнала в двух точках, выбранных слева и справа от ивента (точки пересечения
+маркеров A и B с линией трассы). Точность расчета целиком зависит от верной
+(на уровне средней линии) установки маркеров.
+
+<CENTER><IMG SRC="lsa.png" WIDTH=800 HEIGHT=270 BORDER=0></CENTER>
+
+В методе пяти курсоров (LSA), затухание определяется как разность уровней двух
+прямых, проведенных слева и справа от маркеров A и B в точках пересения ими
+соответствующих маркеров. Уравнения этих прямых получаются применением цифровой
+фильтрации (сглаживания) к выбранным участкам трассы слева и справа от
+помеченного ивента. Очевидно, что эта операция имеет смысл только при
+достаточно &quot;ровных&quot; сглаживаемых участках.
+
+2D-редактор Sorry! поддерживает оба метода измерения.
+
+<CENTER><IMG SRC="lsa-cross.png" WIDTH=926 HEIGHT=916 BORDER=0></CENTER>
+
+Для удобства расчета, встроенный калькулятор содержит специальные функции
+cross() и loss() вычисления значения сигнала в маркированных точках.
+
+
+   cross(side,marker)      Допустимые значения для side: Left / Right,
+                           допустимые значения для marker:  A / B.
+
+и
+
+   loss(method)            Допустимые значения для method:  2PA / LSA.
+
+
+Функция cross() позволяет узнать (и/или использовать в вычислениях) значения в
+точках пересечения обоих аппроксимирующих прямых метода LSA с любым из
+маркеров A/B.
+
+<CENTER><IMG SRC="left-a.png" WIDTH=926 HEIGHT=916 BORDER=0></CENTER>
+
+<CENTER><IMG SRC="left-b.png" WIDTH=926 HEIGHT=916 BORDER=0></CENTER>
+
+<CENTER><IMG SRC="right-a.png" WIDTH=926 HEIGHT=916 BORDER=0></CENTER>
+
+<CENTER><IMG SRC="right-b.png" WIDTH=926 HEIGHT=916 BORDER=0></CENTER>
+
+Функция loss() позволяет узнать (и/или использовать в вычислениях) значения
+затухания на ивенте, полученные любым из методов 2PA/LSA.
+
+<IMG SRC="loss_2pa.png" WIDTH=926 HEIGHT=916 BORDER=0>
+
+<IMG SRC="loss_lsa.png" WIDTH=926 HEIGHT=916 BORDER=0>
+
+Следует иметь ввиду, что возвращаемое этой фунцией значение существенно
+зависит от &quot;ровности&quot; линии трассы и выбранного диапазона сглаживания (или
+выбранной резолюции при автоматическом сглаживании).
+
+На рисунках показано изменение значения затухания в зависимости от резолюции
+(диапазона сглаживания).
+
+<CENTER><IMG SRC="loss-shift_8192.png" WIDTH=926 HEIGHT=916 BORDER=0></CENTER>
+<CENTER><IMG SRC="loss-shift_8192_2.png" WIDTH=926 HEIGHT=916 BORDER=0></CENTER>
+<CENTER><IMG SRC="loss-shift_256.png" WIDTH=926 HEIGHT=916 BORDER=0></CENTER>
+<CENTER><IMG SRC="loss-shift_256_2.png" WIDTH=926 HEIGHT=916 BORDER=0></CENTER>
+</pre>
+
+</td></tr>
+
+</table>
+</td></tr>
+
+<tr><td>
+<hr>
+<em>&copy; Gazlan 2012 * gazlan@yandex.ru</em>
+<hr>
+</td></tr>
+
+</body>
+</html>

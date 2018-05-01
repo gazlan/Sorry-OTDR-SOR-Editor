@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title>Sorry! Splicing</title>
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<div align="center">
+<table border=0 cellspacing=5 cellpadding=15 width="100%" align="left">
+
+<tr><td>
+<table border=0 cellpadding=5 cellspacing=15 align="left">
+<tr><td><a href="../../index.html"><img src="../../design/logo_mini.png" alt="Logo" width="32" height="32" border="0"></a></td><td><em><a href="../../index.html">Sorry!</a></em>&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;<em>Splicing</em></td></tr>
+</table>
+</td></tr>
+
+<tr><td>
+<div align="center"><h1>Sorry! Использование сплайсинга для редактирования трассы</h1></div>
+</td></tr>
+
+<tr><td>
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+<tr><td>
+
+<pre>
+   <FONT SIZE=2 COLOR="#808000"><H1><EM>Внимание !
+
+   Всегда сохраняйте backup-копии 
+   оригинальных файлов.</EM></H1></FONT>
+
+
+Метод сплайсинга наилучшим образом подходит для устранения нежелательных
+рефлективных ивентов.
+
+Предположим, в качестве темплейта выбран файл, содержащий два рефлективных
+ивента, первый из которых нежелателен.
+
+
+<IMG SRC="original.png" WIDTH=630 HEIGHT=732 BORDER=0>
+
+
+
+<H2>Удаление нежелательного ивента по шагам:</H2>
+
+
+1. Открываем файл в редакторе Sorry!
+
+
+<IMG SRC="open.png" WIDTH=630 HEIGHT=732 BORDER=0>
+
+
+Трасса будет показана на вкладке Slide
+
+
+<IMG SRC="slide.png" WIDTH=630 HEIGHT=732 BORDER=0>
+
+
+2. Переходим на вкладку KeyEvents
+
+
+<IMG SRC="s01.png" WIDTH=630 HEIGHT=732 BORDER=0>
+
+
+и выбираем первый ивент для физического редактирования
+
+
+<IMG SRC="s02.png" WIDTH=630 HEIGHT=732 BORDER=0>
+
+
+В открывшемся окне 2D-редактора, перемещаем курсор к начальной точке
+редактируемого участка трассы и правым кликом мышки отмечаем ее как <B>A</B> (<B>Set as A</B>).
+
+
+<IMG SRC="s03.png" WIDTH=630 HEIGHT=732 BORDER=0>
+
+
+Перемещаем курсор к конечной точке редактируемого участка трассы и правым
+кликом мышки отмечаем ее как <B>B</B> (<B>Set as B</B>)
+
+
+<IMG SRC="s04.png" WIDTH=630 HEIGHT=732 BORDER=0>
+
+
+Нажимаем на кнопку <B>Splice</B>
+
+
+<IMG SRC="s05.png" WIDTH=630 HEIGHT=732 BORDER=0>
+
+
+Выбранный участок трассы будет спрямлен сплайсингом. Отредактированная трасса
+при этом находится в буферной памяти во внутреннем формате Sorry!, никакая
+запись на диск не производится. Все изменения в любой момент можно отменить
+нажав на кнопку <B>X</B> (Cancel).
+
+
+<IMG SRC="s06.png" WIDTH=630 HEIGHT=732 BORDER=0>
+
+
+Нажимаем на кнопку <B>Save</B> для сохранения изменений. Измененная трасса будет
+сохранена в памяти редактора взамен оригинальной и может быть использована для
+дальнейшего редактирования.
+
+
+<IMG SRC="s07.png" WIDTH=630 HEIGHT=732 BORDER=0>
+
+
+Никакая запись на диск при этом не производится и, при необходимости,
+оригинальный файл может быть переоткрыт заново.
+
+Закрываем окно 2D-редактора (маленькая иконка [<B>x</B>] в правом верхем углу). Если
+кнопка <B>Save</B> не была ранее нажата, изменения не будут сохранены.
+
+Нажимаем на кнопку <B>Write</B> для сохранения изменений на диске.
+
+
+<IMG SRC="s08.png" WIDTH=630 HEIGHT=732 BORDER=0>
+
+
+Рекомендуется сохранять отредактированный файл с новым именем, а не
+перезаписывать оригинальный файл. Это позволит сделать несколько различных
+редакций и легко &quot;откатить&quot; изменения при необходимости
+
+
+<IMG SRC="s09.png" WIDTH=568 HEIGHT=358 BORDER=0>
+
+
+Загружаем отредактированный файл для повторного просмотра.
+
+
+<IMG SRC="s10.png" WIDTH=568 HEIGHT=358 BORDER=0>
+
+
+Наслаждаемся результатом.
+
+
+<IMG SRC="original.png" WIDTH=630 HEIGHT=732 BORDER=0><IMG SRC="edited.png" WIDTH=630 HEIGHT=732 BORDER=0>
+</pre>
+
+</td></tr>
+
+</table>
+</td></tr>
+
+<tr><td>
+<hr>
+<em>&copy; Gazlan 2012 * gazlan@yandex.ru</em>
+<hr>
+</td></tr>
+
+</body>
+</html>

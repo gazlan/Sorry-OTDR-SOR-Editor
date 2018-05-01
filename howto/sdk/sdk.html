@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title>Sorry! SDK</title>
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<div align="center">
+<table border=0 cellspacing=5 cellpadding=15 width="100%" align="left">
+
+<tr><td>
+<table border=0 cellpadding=5 cellspacing=15 align="left">
+<tr><td><a href="../../index.html"><img src="../../design/logo_mini.png" alt="Logo" width="32" height="32" border="0"></a></td><td><em><a href="../../index.html">Sorry!</a></em>&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;<em><a href="../howto.html">HowTo</a></em>&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;<em>Sorry! SDK</em></td></tr>
+</table>
+</td></tr>
+
+<tr><td>
+<div align="center"><h1>Sorry! SDK</h1></div>
+</td></tr>
+
+<tr><td>
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+<tr><td>
+
+<tr><td>
+<p>В Sorry! добавлена (начальная) поддержка плагинов.</p>
+<p>Плагин представляет из себя обычную Windows DLL, переименованную к расширению .srpl и написанную на любом языке программирования, поддерживающим создание DLL.</p>
+<p>Все плагины должны размещаться в поддиректории \plugins от корневого каталога Sorry!</p>
+<p>Просмотр и вызов плагинов осуществляется на вкладке Plugins</p>
+<br><center><IMG SRC="000.png" WIDTH=630 HEIGHT=753 BORDER=0></center><br>
+<p>Просмотр свойств выбранного плагина по правому клику</p>
+<br><center><IMG SRC="002.png" WIDTH=630 HEIGHT=753 BORDER=0></center><br>
+<p>запуск на исполнение - двойным кликом</p>
+<br><center><IMG SRC="001.png" WIDTH=630 HEIGHT=753 BORDER=0></center><br>
+<p>Плагин обязан экспортировать 4 функции (См. sorry_sdk.h) со следующими сигнатурами:</p>
+<p>extern "C" __declspec(dllexport) BOOL SRPL_Initialize(); extern "C" __declspec(dllexport) void SRPL_Terminate(); extern "C" __declspec(dllexport) BOOL SRPL_Run(); extern "C" __declspec(dllexport) void* SRPL_Info();</p>
+<p>Функции SRPL_Initialize() и SRPL_Terminate() могут быть пустыми (в этом случае, SRPL_Initialize просто возвращает TRUE), функция SRPL_Run() должна содержать необходимый функционал (выполнять реальную работу), функция SRPL_Info должна возвращать адрес заполненной структуры SRPL_INFO с информацией о плагине (См. sorry_sdk.h).</p>
+<p>Sorry! API пока представлен всего несколькими функциями (SOR_WalkerSet и SOR_WalkerRun еще не имплементированы).</p>
+<p></p><p></p>
+<p><i>Если вы разрабатываете собственный плагин и вам нужна какая-либо функциональность (из предоставляемой Sorry!), напишите мне, и она будет добавлена в SDK в приоритетном порядке.</i></p>
+</td></tr>
+
+</table>
+</td></tr>
+
+<tr><td>
+<hr>
+<em>&copy; Gazlan, 2018 * gazlan@yandex.ru</em>
+<hr>
+</td></tr>
+
+</body>
+</html>

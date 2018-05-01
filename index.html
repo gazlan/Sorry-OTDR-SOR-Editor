@@ -1,0 +1,605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+<head>
+<title>Sorry! Interactive fiber trace SOR-files viewer and editor</title>
+<meta http-equiv="Cache-control" content="public" />
+<meta http-equiv="content-language" content="ru" />
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<meta http-equiv="pragma" content="No-Cache" />
+<meta http-equiv="Resource-Type" content="document" />
+<meta name="abstract" content="Sorry! is the world’s first interactive SOR-editor for OTDR fiber trace files (Bellcore/Telcordia)" />
+<meta name="author" content="Sorry! OTDR editor" />
+<meta name="contact" content="gazlan@yandex.ru" />
+<meta name="copyright" content="www.gazlan.ru" />
+<meta name="description" content="Fast and power reflectograms editor. Interactive SOR-editor for OTDR fiber trace files. Full access to read/write all parameters within all standard SOR file blocks" />
+<meta name="distribution" content="global" />
+<meta name="generator" content="Text-2-HTML Converter" />
+<meta name="keywords" content="SOR fiber trace viewer/editor,OTDR viewer/editor,Bellcore/Telcordia SOR-editor,просмотр рефлектограмм,редактор рефлектограмм,Bellcore GR-196-CORE,Telcordia SR-4731" />
+<meta name="reply-to" content="gazlan@yandex.ru" />
+<meta name="revisit-after" content="1 month" />
+<meta name="robots" content="index, follow" />
+<meta name="web_author" content="Gazlan" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+   <script src="//lockjs.googlecode.com/git/lock.min.js"></script>
+
+</head>
+
+<body>
+
+<div align="center">
+<table border=0 cellspacing=5 cellpadding=15 width="100%" align="left">
+
+<tr><td>
+<table border=0 cellpadding=5 cellspacing=15 align="left">
+<tr><td><img src="design/logo_mini.png" alt="Logo" width="32" height="32" border="0"></td><td><em><b>Sorry!</b></em></td></tr>
+</table>
+</td></tr>
+
+<tr><td>
+<div align="center"><IMG SRC="sorry/sorry.png" WIDTH=630 HEIGHT=732 BORDER=0></div>
+</td></tr>
+
+<tr><td>
+<div align="center"><h1>Sorry!</h1></div>
+</td></tr>
+
+<tr><td>
+<div align="center"><IMG SRC="sorry/logo.png" ALT="Extremely fast. Extremely powerful." WIDTH=888 HEIGHT=99 BORDER=0></div>
+</td></tr>
+
+<tr><td>
+<table cellpadding=10 cellspacing=0 width="90%" border=1 align="left">
+<tr><th>Sorry! news</th></tr>
+<tr><td><i>2018-04-30</i>
+<ul>
+<li>Howto pages updated</li>
+<li>Saving 'ExfoNewProprietaryBlock 01' block BUG fix</li>
+<li>АнтиПлагиат: SOR Editor support page</li>
+</td></tr>
+</ul>
+</table>
+</td></tr>
+<tr><td>
+<table cellpadding=10 cellspacing=0 width="90%" border=1 align="left">
+<tr><th>Sorry! features</th></tr>
+<tr>
+<td>
+<ul>
+<li><b>Sorry! is the world’s first interactive SOR-editor for OTDR trace files</b></li>
+<li></li>
+<li>Flexible file access: opens a single SOR file either through the menu, using drag-n-drop or as a command line argument. Browses all files in one folder as slide-show sequence, going forward and back. Multi-level zoom allows insight into any segment of a trace</li>
+<li>Extremely fast file opening and rendering</li>
+<li>Includes specialized 2D editor for interactive trace editing</li>
+<li>Supports high resolution printing from within the 2D editor (including virtual printers  e.g. PDF/DJVU printer)</li>
+<li>Perform trace loss calculation using 2PA or LSA methods</li>
+<li>Includes two methods of trace loss correction: Splicing and Shifting, performed using either auto-correction, manual correction or mouse-based interactive editing</li>
+<li>Built-in calculator (supporting math functions and order-of-operations parentheses) in the 2D editor. Marker positions can be used as pseudo variables</li>
+<li>Full access to read/write all parameters within all standard SOR file blocks</li>
+<li>Extensive compatibility: supports all SOR formats and versions</li>
+<li>Supports three methods of checksum calculation: CCITT (Bellcore/Telcordia standard), XMODEM (Yokogawa Emulator), JDSU (Emulator)</li>
+<li>Allows binary dump of any SOR file block (ex. DataPts)</li>
+<li>Saves time with batch template insertion into text fields (General and Supplier tabs)</li>
+<li>Supports plug-Ins (currently in alpha stage)</li>
+<li>FREE Open Sorry! API and SDK are available (see NULL plugin example)</li>
+<li>Extremely efficient and compact, consists of a single .EXE file</li>
+<li>Offline and autonomous - no requirements for any database server or internet connection</li>
+<li>No dependencies on extra libraries, DLL files, COM or .NET</li>
+<li>Portable: no interaction with the Windows registry</li>
+<li>Corporate licenses allow use by an unlimited number of employees on an unlimited number of computers</li>
+</ul>
+</td>
+</tr>
+</table>
+</td></tr>
+
+<tr><td>
+<table cellpadding=10 cellspacing=0 width="90%" border=1 align="left">
+<tr><th>Sorry! это:</th></tr>
+<tr>
+<td>
+<ul>
+<li><b>Первый в мире интерактивный редактор рефлектограмм</b></li>
+<li></li>
+<li>Гибкие режимы просмотра. Одиночный файл рефлектограммы может быть открыт через меню, перемещен мышью (drag-n-drop), передан как аргумент командной строки. Все файлы в каталоге могут быть последовательно просмотрены в режие "Slide-Show" в прямом и обратном направлении. Multi-Zoom любого участка трассы</li>
+<li>Исключительно высокая скорость просмотра. Sorry! визуализирует рефлектограммы быстрее, чем вы перетаскиваете их мышкой :-)</li>
+<li>Специализированный 2D-редактор для визуального интерактивного редактирования трассы</li>
+<li>Печать окна 2D-редактора, в том числе, на виртуальный принтер. Например, если установлен PDF- или DJVU- виртуальный принтер, полная рефлектограмма или любой ее выбранный фрагмент могут быть сохранены в этом формате с высоким разрешением</li>
+<li>Расчет затухания участка трассы методом двух (2PA) и четырех (LSA) курсоров</li>
+<li>Два метода корректировки затухания на ивенте: Splicing и Shifting. Выбор между автоматическим расчетом, заданием поправок вручную и интерактивным редактированием - "легким движением мыши"</li>
+<li>Встроенный скобочный однострочный калькулятор с возможностью использования параметров установленных в 2D-редакторе маркеров как значений псевдопеременных</li>
+<li>Полный доступ на чтение и редактирование ко всем параметрам стандартных блоков SOR-файла</li>
+<li>Исключительная стабильность. Поддержка всех версий SOR-формата. Sorry! открывает и редактирует даже те SOR-файлы, на которых "падают" другие программы</li>
+<li>Три метода расчета контрольной суммы SOR-файла: CCITT (Bellcore/Telcordia standard), XMODEM (Yokogawa), JDSU (полная совместимость, включая эмуляцию обнаруженного в их программах BUG'а)</li>
+<li>Дамп (как бинарного объекта) любого блока SOR-файла (например, DataPts)</li>
+<li>В один клик - обновление текстовых полей (вкладки General и Supplier) по шаблону</li>
+<li>Поддержка плагинов (alpha stage) - напишите свой собственный обработчик SOR-файла</li>
+<li>FREE Open Sorry! API. Sorry! SDK и пример плагина входят в поставку</li>
+<li>Исключительно компактен. Легко умещается на дискете 360 Kb 5.25" :-)</li>
+<li>Автономная работа - не требует подключения к серверу или интернет</li>
+<li>Отсутствие зависимостей: не требует установки сторонних библиотек, не использует COM, или .NET</li>
+<li>Портативность - ничего не пишет в реестр, все настройки сохраняются в директории программы</li>
+<li>Корпоративная лицензия: может быть использован неограниченным числом сотрудников на неограниченном числе компьютеров</li>
+</ul>
+</td>
+</tr>
+</table>
+</td></tr>
+
+<tr><td>
+<div align="center"><i>(Required <a href="http://www.rarlab.com/download.htm" rel="nofollow">WinRar</a> 5.xx version for unpacking)</i></div>
+</td></tr>
+
+<tr><td>
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+
+<tr>
+   <td><a href="sorry/sorry_demo.rar"><img src="design/rar.png" alt="" width="32" height="32" border="0"></a></td>
+   <td><a href="sorry/sorry_demo.rar">Sorry! - Demo version</a></td>
+   <td>233,566</td>
+   <td><small><img src="sorry/sorry_icon.png" alt="" width="32" height="32" border="0"><b>Sorry! - Interactive SOR-files editor</b> (Bellcore SOR 1.xx / Telcordia SOR 2.0).<br>
+   <b>Sorry! facts: Ultra compact. Ultra fast. Ultra power. No COM. No NET. No dependencies.</b>
+   <br><br>
+   Уникальный исключительно быстрый вьювер и интерактивный редактор рефлектограмм в формате SOR с полным доступом на чтение / редактирование / запись к любому полю
+   SOR-файла, включая конструирование и модификацию трассы.<br><br><br>
+   <b><i>Archive password: sorry</i></b><br><br>
+   Поддерживает все стандартные блоки файлов формата SOR 1.00, SOR 1.10 
+   (<a href="http://telecom-info.telcordia.com/site-cgi/ido/docs.cgi?DOCUMENT=gr-196&KEYWORDS=&TITLE=&ID=223406260SEARCH" rel="nofollow">
+   Bellcore GR-196-CORE</a>) и SOR 2.00, SOR 2.10 (<a href="http://telecom-info.telcordia.com/site-cgi/ido/docs.cgi?DOCUMENT=4731&KEYWORDS=&TITLE=&ID=226047986SEARCH" rel="nofollow">
+   Telcordia SR-4731</a>) и информирует о любых дополнительных (проприетарных) блоках, добавленных производителем рефлектометра или программами обработки рефлектограмм и возможных отклонениях формата от стандарта.
+   
+   <div align="left">
+   <table cellspacing="0" cellpadding="0" align="left" border="0" width="100%">
+   <th><br>AV note:</th>
+   <tr><td>Some AV have erroneously detect on the Upack packer. You can check on <a href="https://www.virustotal.com" rel="nofollow">VirusTotal</a> - it's clean.</td></tr>
+   <tr><td><b><i>Archive MD5 hash: <b><i>2018-04-29  22:06:25  E23AD327705A1B2F447ACFC65795FFE8</i></b>
+   </td></tr>
+   </table>
+
+   </small></td>
+</tr>
+
+<tr>
+   <td><a href="sorry/sorry_full.rar"><img src="design/rar.png" alt="" width="32" height="32" border="0"></a></td>
+   <td><a href="sorry/sorry_full.rar">Sorry! - Full version</a></td>
+   <td>2,652,662</td>
+   <td><small><img src="sorry/sorry_icon.png" alt="" width="32" height="32" border="0"><b>Sorry! - Interactive SOR-files editor</b> (Bellcore SOR 1.xx / Telcordia SOR 2.0).<br>
+   <b><i>(только для зарегистрированных пользователей)</i></b><br>Archive MD5 hash: <b><i>2018-04-29  21:46:14  457D0DC87390997158C3098CCB1600DB</i></b></td>
+</tr>
+
+<tr>
+   <td><a href="sorry/dox/dox.html"><img src="design/html.png" alt="" width="32" height="32" border="0"></a></td>
+   <td><a href="sorry/dox/dox.html">Sorry! dox</a></td>
+   <td>&nbsp;</td>
+   <td><small><b>Описание интерфейса программы</b><br>Формально, .SOR-файл - это serialized multiway tree. 
+   Но не ищите этих слов в документации, их там нет. Возможно, инженеры Tellcordia (первоначального разработчика формата) 
+   и вовсе не оперировали категорией ADT, и это одна из причин, почему формат с более чем десятилетней историй все еще так плох и невнятен.
+   </small></td>
+</tr>
+
+<tr>
+   <td><a href="sorry/sorry_sdk.rar"><img src="design/rar.png" alt="" width="32" height="32" border="0"></a></td>
+   <td><a href="sorry/sorry_sdk.rar">Sorry! SDK (alpha)</a></td>
+   <td>3,056</td>
+   <td><small><b>Sorry! SDK</b><br>Создайте свой собственный Sorry! plugin.</small></td>
+</tr>
+
+<tr>
+   <td><a href="sorry/sorry_null_plugin.rar"><img src="design/rar.png" alt="" width="32" height="32" border="0"></a></td>
+   <td><a href="sorry/sorry_null_plugin.rar">Sorry! NULL plugin</a></td>
+   <td>12,459</td>
+   <td><small><b>Sorry! SDK part</b><br>Минимальный (&quot;пустышка&quot;) NULL Sorry! plugin. Полный демонстрационный проект (MSVS 6.0)</small></td>
+</tr>
+
+<tr>
+   <td><a href="sorry/comix.splicing.djvu"><img src="design/djvu.png" alt="" width="32" height="32" border="0"></a></td>
+   <td><a href="sorry/comix.splicing.djvu">Comics: Splicing</a></td>
+   <td>1,359,055</td>
+   <td><small><b>Сплайсинг в картинках.</b> Просто как 1-2-3 !</small></td>
+</tr>
+
+</table>
+</td></tr>
+
+<tr><td>
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+
+<tr>
+   <td><a href="sorry/calc/calc.html">Sorry! - Работа с калькулятором</a></td>
+   <td><a href="sorry/sorry_calc.chm"><img src="design/chm.png" alt="" width="32" height="32" border="0"></a></td>
+   <td><a href="sorry/sorry_calc.rar"><img src="design/rar.png" alt="" width="32" height="32" border="0"></a></td>
+   <td><small>Для удобства расчетов, связанных с параметрами ивентов, вкладка EventInfo
+   снабжена встроенным однострочным калькулятором, способным выполнять четыре
+   основных арифметических действия (сложение/умножение/вычитание/деление) и
+   вычисление нескольких часто используемых функций.</small></td>
+</tr>
+
+<tr>
+   <td><a href="sorry/q/q.html">Sorry! - Работа с программой и вопросы для обсуждения</a></td>
+   <td><a href="sorry/sorry_q.chm"><img src="design/chm.png" alt="" width="32" height="32" border="0"></a></td>
+   <td><a href="sorry/sorry_q.rar"><img src="design/rar.png" alt="" width="32" height="32" border="0"></a></td>
+   <td><small>Поскольку SOR-формат допускает хранение нестандартных блоков
+   проприетарного формата с информацией от вендора, Sorry! использует эту
+   возможность для добавления собственного блока, в котором сохраняет
+   некоторую информацию, в первую очередь, созданный пользователем
+   комментарий (произвольный текст). Этот комментарий доступен на вкладке
+   Owner и позволяет сохранять вместе с SOR-файлом его описание</small></td>
+</tr>
+
+<tr>
+   <td><a href="sorry/splicing/splicing.html">Использование сплайсинга для редактирования трассы</a></td>
+   <td><a href="sorry/splicing.chm"><img src="design/chm.png" alt="" width="32" height="32" border="0"></a></td>
+   <td><a href="sorry/splicing.rar"><img src="design/rar.png" alt="" width="32" height="32" border="0"></a></td>
+   <td><small>Метод сплайсинга наилучшим образом подходит для устранения нежелательных
+   рефлективных ивентов</small></td>
+</tr>
+
+<tr>
+   <td><a href="sorry/options/options.html">Compatibility options</a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+   <td><small>Известные проблемы совместимости</small></td>
+</tr>
+
+<tr>
+   <td><a href="sorry/sdk/sdk.html">Sorry! SDK</a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+   <td><small><b>Sorry! SDK</b> - сервисные функции библиотеки Sorry!, доступные для вызова из пользовательских plugins</small></td>
+</tr>
+
+</table>
+</td></tr>
+
+<tr>
+<td>
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+
+<tr>
+<th>Test Drive</th>
+</tr>
+
+<tr>
+<td>
+<p>Demo-версия программы не имеет возможности редактирования коллекций. 
+Если, после опробывания Demo, у вас остались сомнения в том, как рефлектограмма, 
+отснятая вашим рефлектометром, будет смотреться в вашем любимом вьювере после 
+редактирования трассы, можете запросить &quot;Test Drive&quot; - просто пришлите ваш 
+SOR-файл с указаниями в каком месте и как желательно отредактировать трассу. 
+Обратной почтой вы получите отредактированный вариант.</p>
+<p>P.S.</p>
+<p><b>Не пишите с адресов mail.ru</b> (я не смогу вам ответить; подробнее см. ниже)</p>
+</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+<tr>
+<td>
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+
+<tr>
+<th><center><a href="howto/howto.html">How To</a></center></th>
+</tr>
+<tr>
+<td>Несколько <a href="howto/howto.html">советов</a> по работе с программой</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+<tr>
+<td>
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+
+<tr>
+<th>BUG Reports</th>
+</tr>
+
+<tr>
+<td>
+<p>Если вы нашли ошибку:</p>
+<p>-  Убедитесь, что у вас скачана последняя версия программы</p>
+<p>-  Что ошибка не связана с ограничениями DEMO-версии</p>
+<p>-  Что вы <b>не</b> пишете с адресов mail.ru (я не смогу вам ответить; подробнее см. ниже)</p>
+<p>-  Пришлите описание проблемы - достаточно подробное, чтобы я мог 
+воспроизвести ее у себя. Добавьте все, что может помочь в локализации проблемы: 
+текст сообщения об ошибке, файл crash_report.txt (если он был создан), снимки экрана, распечатку отчета итп.</p>
+<p>-  Приложите сам проблемный SOR-файл (или, в случае редактирования два 
+SOR-файла - оригинальный и отредактированный)</p>
+<p>-  Если проблема возникает при использовании отредактированного SOR-файла 
+в сторонней программе, может потребоваться сама эта программа (если у меня нет 
+той же версии, что и у вас)</p>
+<p><a href="mailto:gazlan@yandex.ru?subject=Sorry!%20feedback"><h3><b><i>Написать</i></b></h3></a></p>
+</td>
+</tr>
+
+</table>
+
+</td></tr>
+
+<tr><td>
+
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+<tr><td>
+<p><h2><a href="sor2x/sor2x.html"><b>Freeware</b> SOR-2-X format converters</a></h2></p>
+</td></tr>
+</table>
+
+</td></tr>
+
+<tr><td>
+
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+<tr><td>
+<p>Перейти на страницу <a href="anritsu/anritsu.html">Anritsu MW9070a DAT-2-SOR converter (<b>Freeware</b>)</a></p>
+</td></tr>
+</table>
+
+</td></tr>
+
+<tr><td>
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+
+<tr>
+<th>Other soft</th>
+</tr>
+
+<tr>
+<td>Если вам не требуется вся мощь Sorry!<br><br><br><br><b>FREE</b><br>Бесплатные программы для просмотра (и частичного редактирования) рефлектограмм в формате SOR:<br></td>
+</tr>
+
+<tr>
+<td>
+<b>SORTraceViewer 3.3.2</b>
+<br>
+<a href="http://www.sortraceviewer.ru/" rel="nofollow">SORTraceViewer 3.3.2</a>
+<br>
+© 2014-2018 Дмитрий Вайгант * waydm@yandex.ru
+</td>
+</tr>
+
+<tr>
+<td>
+<b>TRM Test Results Manager PC Software v1.6.5</b>
+<br>
+<a href="http://www.aflglobal.com" rel="nofollow">TRM Test Results Manager PC Software v1.6.5</a>
+<br>
+<a href="http://www.aflglobal.com/Resources/Software.aspx" rel="nofollow">http://www.aflglobal.com/Resources/Software.aspx</a>
+<br>
+<a href="http://www.aflglobal.com/software/testinspection/exe/TRM-00-0701_WEB_RevE_v1.6.5/TRM_v1.6.5.exe" rel="nofollow">http://www.aflglobal.com/software/testinspection/exe/TRM-00-0701_WEB_RevE_v1.6.5/TRM_v1.6.5.exe</a>
+</td>
+</tr>
+
+<tr>
+<td>
+<b>Trace.Net PC Software v2.1.2</b>
+<br>
+<a href="http://www.aflglobal.com" rel="nofollow">http://www.aflglobal.com</a>
+<br>
+<a href="http://www.aflglobal.com/Resources/Software.aspx" rel="nofollow">http://www.aflglobal.com/Resources/Software.aspx</a>
+<br>
+<a href="http://www.aflglobal.com/software/testinspection/exe/TRAC-01-0801_WEB_RevG_v2.1.2/Trace.Net_v2.1.2_Without_Framework.exe" rel="nofollow">http://www.aflglobal.com/software/testinspection/exe/TRAC-01-0801_WEB_RevG_v2.1.2/Trace.Net_v2.1.2_Without_Framework.exe</a>
+</td>
+</tr>
+
+<tr>
+<td>
+OTDR TraceViewer III+
+<br>
+<a href="http://www.home.agilent.com" rel="nofollow">http://www.home.agilent.com</a>
+<br>
+<a href="http://www.home.agilent.com/agilent/software.jspx?ckey=sw131&lc=eng&cc=CA&nid=-11143.0.00&id=sw131" rel="nofollow">http://www.home.agilent.com/agilent/software.jspx?ckey=sw131&lc=eng&cc=CA&nid=-11143.0.00&id=sw131</a>
+<br>
+<b><i>[ registration need ]</i></b>
+</td>
+</tr>
+
+<tr>
+<td>
+<b>TraceView Software v5.0</b>
+<br>
+<a href="http://www.anritsu.com" rel="nofollow">http://www.anritsu.com</a>
+<br>
+<a href="http://www.anritsu.com/en-us/downloads/software/drivers-software-downloads/dwl2761.aspx" rel="nofollow">http://www.anritsu.com/en-us/downloads/software/drivers-software-downloads/dwl2761.aspx</a>
+<br>
+<a href="http://downloadfiles.anritsu.com/Files/en-US/Software/Drivers-Software-Downloads/TraceView5_0.zip">http://downloadfiles.anritsu.com/Files/en-US/Software/Drivers-Software-Downloads/TraceView5_0.zip</a>
+</td>
+</tr>
+
+<tr>
+<td>
+OTDR Trace Viewer
+<br>
+<a href="http://www.exfo.com" rel="nofollow">http://www.exfo.com</a>
+<br>
+<a href="http://www.exfo.com/en/Login" rel="nofollow">http://www.exfo.com/en/Login</a>
+<br>
+<b><i>[ registration need ]</i></b>
+</td>
+</tr>
+
+<tr>
+<td>
+<b>Fiberdoc 5.41 Demo</b>
+<br>
+<a href="http://www.fiberdoc.de" rel="nofollow">http://www.fiberdoc.de</a>
+<br>
+<a href="http://www.fiberdoc.de/english/Demoversions/Demoversion_V5/demoversion_v5.htm" rel="nofollow">http://www.fiberdoc.de/english/Demoversions/Demoversion_V5/demoversion_v5.htm</a>
+<br>
+<a href="http://www.fiberdoc.de/demos/FIBERDOC_DEMO.EXE" rel="nofollow">http://www.fiberdoc.de/demos/FIBERDOC_DEMO.EXE</a>
+</td>
+</tr>
+
+<tr>
+<td>
+<b>OFS-110 Optical FiberTrace Viewer</b>
+<br>
+<a href="http://www.jdsu.com" rel="nofollow">http://www.jdsu.com</a>
+<br>
+<a href="http://ofs.updatemyunit.net" rel="nofollow">http://ofs.updatemyunit.net</a>
+<br>
+<a href="http://ofs.updatemyunit.net/archives/OFS-110_Optical_Fiber_Trace_Viewer_Software_Setup_v6_90.exe" rel="nofollow">http://ofs.updatemyunit.net/archives/OFS-110_Optical_Fiber_Trace_Viewer_Software_Setup_v6_90.exe</a>
+</td>
+</tr>
+
+<tr>
+<td>
+SOR Shell Extension (work with OTDR traces in Windows Explorer)
+<br>
+<a href="http://www.optixsoft.com" rel="nofollow">http://www.optixsoft.com</a>
+<br>
+<a href="http://www.optixsoft.com/download-en.php?file=sorse_setup.exe" rel="nofollow">http://www.optixsoft.com/download-en.php?file=sorse_setup.exe</a>
+<br>
+<b><i>[ registration need ]</i></b>
+</td>
+</tr>
+
+<tr>
+<td>
+Fiberizer Desktop OTDR trace viewer
+<br>
+<a href="http://fiberizer.com/" rel="nofollow">http://fiberizer.com</a>
+<br>
+<a href="http://fiberizer.com/desktop/download-otdr-trace-viewer" rel="nofollow">http://fiberizer.com/desktop/download-otdr-trace-viewer</a>
+<br>
+<a href="http://data.fiberizer.com/downloads/FiberizerDesktopSetup-EN.exe" rel="nofollow">http://data.fiberizer.com/downloads/FiberizerDesktopSetup-EN.exe</a>
+<br>
+<b><i>[ registration need ]</i></b>
+</td>
+</tr>
+
+<tr>
+<td>
+<b>OTDR Viewer</b>
+<br>
+<a href="http://www.yokogawa.com" rel="nofollow">http://www.yokogawa.com</a>
+<br>
+<a href="https://y-link.yokogawa.com/YL008.po?Login_type=1&Download_id=DL00001530&Language_id=EN&LANG=EN" rel="nofollow">https://y-link.yokogawa.com/YL008.po?Login_type=1&Download_id=DL00001530&Language_id=EN&LANG=EN</a>
+<br>
+<a href="ftp://ftp.yokogawa.co.jp/dist/ks/eusers/aq/1vmnf/soft/aq7932/AQ7932Viewer402EN.zip" rel="nofollow">ftp://ftp.yokogawa.co.jp/dist/ks/eusers/aq/1vmnf/soft/aq7932/AQ7932Viewer402EN.zip</a>
+</td>
+</tr>
+
+<tr>
+<td>
+Visa Viewer X-PRO<br><b>[ Newer work for me ]</b><br><br><div align="left"><IMG SRC="sorry/svpribor.png" WIDTH=509 HEIGHT=162 BORDER=0></div>
+<br>
+<a href="http://svpribor.ru" rel="nofollow">http://svpribor.ru/</a>
+<br>
+<a href="http://svpribor.ru/dpage.php?pnum=110818093900" rel="nofollow">http://svpribor.ru/dpage.php?pnum=110818093900</a>
+<br>
+<a href="http://www.svpribor.ru/docs/50e5e4cf.zip" rel="nofollow">http://www.svpribor.ru/docs/50e5e4cf.zip</a>
+</td>
+</tr>
+
+</table>
+</td></tr>
+
+<tr><td>
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+
+<tr>
+<td><b>TRIAL</b><br>Ограниченные платные версии</td>
+</tr>
+
+<tr>
+<td>
+<b>TRM® 2.0 - Test Results Manager PC software v2.0</b>
+<br>
+<a href="http://www.aflglobal.com" rel="nofollow">http://www.aflglobal.com</a>
+<br>
+<a href="http://www.aflglobal.com/Resources/Software.aspx" rel="nofollow">http://www.aflglobal.com/Resources/Software.aspx</a>
+<br>
+<a href="http://www.aflglobal.com/software/testinspection/TRM-2-0/TRM-20-0701_RevB_v2.0.1.exe" rel="nofollow">http://www.aflglobal.com/software/testinspection/TRM-2-0/TRM-20-0701_RevB_v2.0.1.exe</a>
+</td>
+</tr>
+
+<tr>
+<td>
+Еще несколько программ для обработки рефлектограмм можно найти в файловом разделе на сайте компании &quot;Оптические технологии&quot;
+<br>
+<a href="http://svarka-optiki.ru/" rel="nofollow">http://svarka-optiki.ru</a>
+<br>
+<b><i>[ registration need ]</i></b>
+</td>
+</tr>
+
+<tr>
+<td>
+<br><br>
+<center><b><IMG SRC="sorry/shit.jpg" WIDTH=120 HEIGHT=120 BORDER=0></b></center>
+</td>
+</tr>
+
+<tr>
+<td>
+<br><br>
+<center><a href="plagiarism/plagiarism.html"><h1>ПЛАГИАТ:&nbsp;&nbsp;&nbsp;SorEditor</h1></a></center>
+</td>
+</tr>
+
+<tr>
+<td>                                             
+<br><br>
+<center><a href="soreditor/soreditor.html"><h2>АнтиПлагиат:&nbsp;&nbsp;&nbsp;SOR Editor support page</h2></a></center>
+</td>
+</tr>
+
+<tr>
+<td>
+<br><br>
+<center><b>OFFTOPIC</b></center>
+</td>
+</tr>
+
+<tr>
+<td>
+<b><i>Переписка</i></b>
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>MAIL.RU</b>
+<br>
+<p>Все просто - <b>не используйте.</b></p>
+<p>Если вы напишете мне с адреса mail.ru (или любого другого их домена),<br>
+я не смогу вам ответить. Все письма, отправляемые адресатам mail.ru<br>
+возвращаются обратно с пометкой &quot;Недоставленное сообщение&quot; и, примерно,<br>
+таким текстом:</p>
+<p>&gt;&nbsp;&nbsp;&nbsp;This is the mail system at host yandex.ru.<br>
+&gt;<br>
+&gt;&nbsp;&nbsp;&nbsp;I'm sorry to have to inform you that your message could not<br>
+&gt;&nbsp;&nbsp;&nbsp;be delivered to one or more recipients. It's attached below.<br>
+&gt;<br>
+&gt;&nbsp;&nbsp;&nbsp;Please, do not reply to this message.<br>
+&gt;<br>
+&gt;<br>
+&gt;&nbsp;&nbsp;&nbsp;&lt;***@mail.ru&gt;: host mxs.mail.ru[94.100.176.20] said: 550 spam message rejected.<br>
+&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please visit<br>
+&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://help.mail.ru/notspam-support/id?c=dr1Vlv6liVdnHN_umSHPS0umg0g2uX_wqxctu0MDWWyLGDrsGETyLwEAAAB_PgAAdmFQHQ~~<br>
+&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or  report details to abuse@corp.mail.ru.<br>
+<p></p>
+<p>Так вот, - я не стану рапортовать в abuse.</p>
+<p></p>
+<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I'm Sorry!</b></p>
+<p></p>
+<p>Я просто не хочу иметь с ними дела.</p>
+</td>
+</tr>
+
+</table>
+</td></tr>
+
+<tr><td>
+<hr>
+<em>&copy; Gazlan 2012-2018 * gazlan@yandex.ru</em>
+<hr>
+</td></tr>
+</table>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title>Templates</title>
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<div align="center">
+<table border=0 cellspacing=5 cellpadding=15 width="100%" align="left">
+
+<tr><td>
+<table border=0 cellpadding=5 cellspacing=15 align="left">
+<tr><td><a href="../../index.html"><img src="../../design/logo_mini.png" alt="Logo" width="32" height="32" border="0"></a></td><td><em><a href="../../index.html">Sorry!</a></em>&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;<em><a href="../howto.html">HowTo</a></em>&nbsp;&nbsp;&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;<em>Templates</em></td></tr>
+</table>
+</td></tr>
+
+<tr><td>
+<div align="center"><h1>Templates</h1></div>
+</td></tr>
+
+<tr><td>
+<table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+<tr><td>
+<p>Для автоматизации заполнения текстовых полей SOR-файла могут быть использованы шаблоны.</p>
+<p>Template - это текстовый файл специального формата (в данном случае, gen_template.txt), имя и путь произвольны, выбор файла производится из меню Options.</p>
+<p><b>Пример заполнения:</b></p>
+<pre>
+   <i># General Parameters block text template</i>
+   <i>#</i>
+   <i># DON'T CHANGE ANYTHING BEFORE COLON SIGN (Include the colon sign itself).</i>
+   <i># Anything after colon sign is just Free Text Line up to you.</i>
+   <i>#</i>
+   <b>Cable ID:</b>               < Fill with Cable ID >
+   <b>Fiber ID:</b>               < Fill with Fiber ID >
+   <b>Originating Location:</b>   < Fill with Originating Location >
+   <b>Terminating Location:</b>   < Fill with Terminating Location >
+   <b>Cable Code:</b>             < Fill with Cable Code >
+   <b>Operator:</b>               < Smth about Operator >
+   <b>Comment:</b>                < Your comment here >
+</pre>
+
+<p><ul>
+<li>Заметьте, что вся левая часть до двоеточия + само двоеточие - это метка 
+   поля, ее НЕЛЬЗЯ редактировать.</li>
+<li>Справа от двоеточия может находиться произвольный текст, пробелы слева и 
+   справа будут при чтении обрезаны. Этот текст будет вставлен в 
+   соответствующее поле на вкладке GenParams при нажатии на кнопку Auto.</li>
+<li>Возможны три режима: безусловная замена, замена только пустых полей, 
+   запрос разрешения на замену непустых полей (если в поле содержится хотя бы 
+   один пробел, оно считается непустым).</li>
+</ul></p>
+
+<p><b>Важно:</b></p>
+<p><ul>
+   <li>Если справа от двоеточия НЕТ текста, то при замене текст из поля блока 
+   будет удален (заменен на "пустой текст").</li>
+   <li>Если какая-либо из перечисленных строк в файле пропущена, считается, что 
+   она имеет "пустое" значение и при автозамене текст из поля блока будет 
+   удален (заменен на "пустой текст").</li>
+   <li>Строки начинающиеся с символа '#' в первой позиции рассматриваются как 
+   комментарий, пустые строки и не содержащие метку поля игнорируются (файл 
+   может содержать произвольный поясняющий текст).</li>
+</ul></p>
+</td></tr>
+
+</table>
+</td></tr>
+
+<tr><td>
+<center><IMG SRC="general_1.png" WIDTH=630 HEIGHT=753 BORDER=0></center>
+<br>
+<center><IMG SRC="general_2.png" WIDTH=630 HEIGHT=753 BORDER=0></center>
+<br>
+<center><IMG SRC="template_options_1.png" WIDTH=580 HEIGHT=476 BORDER=0></center>
+<br>
+<center><IMG SRC="template_options_2.png" WIDTH=606 HEIGHT=282 BORDER=0></center>
+</td></tr>
+
+<tr><td>
+<hr>
+<em>&copy; Gazlan, 2018 * gazlan@yandex.ru</em>
+<hr>
+</td></tr>
+
+</body>
+</html>
