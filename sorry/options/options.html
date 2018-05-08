@@ -24,13 +24,32 @@
 
 <tr><td>
 <table cellpadding=5 cellspacing=15 width="100%" border=0 align="left">
+
 <tr><td>
-
 <h1>Известные проблемы совместимости</h1>
+<br>
 <h2>Compatibility options</h2>
+<ul>
+<li><a href="#Acterna">Acterna</a></li>
+<li><a href="#Agizer">Agizer</a></li>
+<li><a href="#Anritsu">Anritsu</a></li>
+<li><a href="#EXFO">EXFO / FTB</a></li>
+<li><a href="#FiberDoc OTDR viewer">FiberDoc OTDR viewer</a></li>
+<li><a href="#JDSU">JDSU</a></li>
+<li><a href="#JDSU Fiber Cable">JDSU Fiber Cable</a></li>
+<li><a href="#KIWI">KIWI</a></li>
+<li><a href="#OWLView for OTDR">OWLView for OTDR</a></li>
+<li><a href="#TOPAZ">SvyazServis TOPAZ</a></li>
+<li><a href="#YOKOGAWA">YOKOGAWA</a></li>
+<li><a href="#YOKOGAWA AQ7932 Emulation Software">YOKOGAWA AQ7932 Emulation Software</a></li>
+</ul>
+<br>
+<br>
+</tr><td>
 
+<tr><td>
 <div align="center">
-<h2>Acterna MTS 6026VSRE, MTS 8000</h2>
+<h2><a name="Acterna">Acterna</a></h2>
 <br>
 <table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
 <tr>
@@ -38,17 +57,64 @@
 </tr>
 <tr>
 <td>Проприетарное алго расчета контрольной суммы CkSum</td>
-<td>Нет решения</td>
+<td>Currently NO solution.</td>
 </tr>
 </table>
 </div>
+</td></tr>
+</tr><td>
 
+<tr><td>
+<div align="center">
+<h2><a name="Agizer">Agizer</a></h2>
+<br>
+<table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
+<tr>
+<th>Problem</th><th>Solution</th>
+</tr>
+<tr>
+<td>Unwanted IIT proprietary blocks</td>
+<td><CENTER><IMG SRC="agizer_proprietary_blocks.png" WIDTH=630 HEIGHT=754 BORDER=0></CENTER>
+<br>
+Just remove unwanted blocks</td>
+</tr>
+</table>
+</div>
+</td></tr>
+</tr><td>
+
+<tr><td>
+<div align="center">
+<h2><a name="Anritsu">Anritsu</a></h2>
+<br>
+<table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
+<tr>
+<th>Problem</th><th>Solution</th>
+</tr>
+<tr>
+<td>Hidden field</td>
+<td>
+<CENTER><IMG SRC="anritsu_hidden.png" WIDTH=634 HEIGHT=513 BORDER=0></CENTER>
+<br>
+<CENTER><IMG SRC="hidden.png" WIDTH=630 HEIGHT=754 BORDER=0></CENTER>
+</td>
+</tr>
+<tr>
+<td>Проприетарное скрытое текстовое поле</td>
+<td>Currently NO solution.</td>
+</tr>
+<tr>
+<td>Проприетарное алго расчета контрольной суммы CkSum</td>
+<td><CENTER><IMG SRC="anritsu_proprietary_cksum.png" WIDTH=630 HEIGHT=754 BORDER=0></CENTER>
+<br>Currently NO solution.</td>
+</tr>
+</table>
+</div>
 </td></tr>
 
 <tr><td>
-
 <div align="center">
-<h2>EXFO AXS-100-023B-EI, AXS-110-23B-EI</h2>
+<h2><a name="EXFO">EXFO / FTB</a></h2>
 <br>
 <table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
 <tr>
@@ -56,25 +122,12 @@
 </tr>
 <tr>
 <td>Нарушение стандарта SR 4731 (Non default empty string value)</td>
-<td><CENTER><IMG SRC="zero.png" WIDTH=580 HEIGHT=594 BORDER=0></CENTER></td>
+<td><CENTER><IMG SRC="zero.png" WIDTH=580 HEIGHT=569 BORDER=0></CENTER></td>
 </tr>
 <tr>
 <td>Проприетарное алго расчета контрольной суммы CkSum</td>
-<td>Нет решения</td>
-</tr>
-</table>
-</div>
-
-</td></tr>
-
-<tr><td>
-
-<div align="center">
-<h2>EXFO OTDR</h2>
-<br>
-<table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
-<tr>
-<th>Problem</th><th>Solution</th>
+<td><CENTER><IMG SRC="exfo_proprietary_cksum.png" WIDTH=630 HEIGHT=754 BORDER=0></CENTER>
+<br>Currently NO solution.</td>
 </tr>
 <tr>
 <td>При наличии в SOR-файле проприетарного блока &quot;ExfoNewProprietaryBlock 01&quot;
@@ -83,13 +136,69 @@
 </tr>
 </table>
 </div>
-
 </td></tr>
 
 <tr><td>
-
 <div align="center">
-<h2>FTB-7200D-023B-EI, FTB-7300E-023B-EI</h2>
+<h2><a name="FiberDoc OTDR viewer">FiberDoc OTDR viewer</a></h2>
+<br>
+<table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
+<tr>
+<th>Problem</th><th>Solution</th>
+</tr>
+<tr>
+<td>Unwanted FiberDoc proprietary blocks</td>
+<td><CENTER><IMG SRC="fiberdoc_proprietary_blocks.png" WIDTH=630 HEIGHT=754 BORDER=0></CENTER>
+<br>
+Just remove unwanted blocks</td>
+</tr>
+</table>
+</div>
+</td></tr>
+</tr><td>
+
+<tr><td>
+<div align="center">
+<h2><a name="JDSU">JDSU</a></h2>
+<br>
+<table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
+<tr>
+<th>Problem</th><th>Solution</th>
+</tr>
+<tr>
+<td>Проприетарное алго расчета контрольной суммы CkSum</td>
+<td>Currently NO solution.</td>
+</tr>
+</table>
+</div>
+</td></tr>
+
+<tr><td>
+<div align="center">
+<h2><a name="JDSU Fiber Cable">JDSU Fiber Cable</a></h2>
+<br>
+<table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
+<tr>
+<th>Problem</th><th>Solution</th>
+</tr>
+<tr>
+<td>Unwanted JDSU proprietary blocks</td>
+<td><CENTER><IMG SRC="fiberdoc_proprietary_blocks.png" WIDTH=630 HEIGHT=754 BORDER=0></CENTER>
+<br>
+Just remove unwanted blocks</td>
+</tr>
+<tr>
+<td>Проприетарное алго расчета контрольной суммы CkSum<br></td>
+<td><CENTER><IMG SRC="jdsu_proprietary_cksum.png" WIDTH=630 HEIGHT=754 BORDER=0></CENTER>
+<br>Currently NO solution.</td>
+</tr>
+</table>
+</div>
+</td></tr>
+
+<tr><td>
+<div align="center">
+<h2><a name="KIWI">KIWI</a></h2>
 <br>
 <table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
 <tr>
@@ -101,57 +210,40 @@
 </tr>
 <tr>
 <td>Проприетарное алго расчета контрольной суммы CkSum</td>
-<td>Нет решения</td>
+<td>Currently NO solution.</td>
 </tr>
 </table>
 </div>
-
 </td></tr>
 
 <tr><td>
-
 <div align="center">
-<h2>JDSU MTS 2000</h2>
+<h2><a name="OWLView for OTDR">OWLView for OTDR</a></h2>
 <br>
 <table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
 <tr>
 <th>Problem</th><th>Solution</th>
 </tr>
 <tr>
-<td>Проприетарное алго расчета контрольной суммы CkSum</td>
-<td>Нет решения</td>
+<td>Non standard blocks order</td>
+<td><CENTER><IMG SRC="owl_blocks_order.png" WIDTH=630 HEIGHT=754 BORDER=0></CENTER>
+<br>Currently NO solution.</td>
 </tr>
-</table>
-</div>
-
-</td></tr>
-
-<tr><td>
-
-<div align="center">
-<h2>KIWI-4800</h2>
+<tr>
+<td>Unwanted OWL proprietary block &quot;OpticalWavelengthLabs0&quot;</td>
+<td>
+<CENTER><IMG SRC="owl_proprietary_block.png" WIDTH=630 HEIGHT=754 BORDER=0></CENTER>
 <br>
-<table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
-<tr>
-<th>Problem</th><th>Solution</th>
-</tr>
-<tr>
-<td>Нарушение стандарта SR 4731 (Non default empty string value)</td>
-<td><CENTER><IMG SRC="zero.png" WIDTH=580 HEIGHT=594 BORDER=0></CENTER></td>
-</tr>
-<tr>
-<td>Проприетарное алго расчета контрольной суммы CkSum</td>
-<td>Нет решения</td>
+Just remove unwanted block</td>
+</td>
 </tr>
 </table>
 </div>
-
 </td></tr>
 
 <tr><td>
-
 <div align="center">
-<h2>SvyazServis TOPAZ7105ARX</h2>
+<h2><a name="TOPAZ">SvyazServis TOPAZ</a></h2>
 <br>
 <table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
 <tr>
@@ -163,13 +255,11 @@
 </tr>
 </table>
 </div>
-
 </td></tr>
 
 <tr><td>
-
 <div align="center">
-<h2>YOKOGAWA AQ7260</h2>
+<h2><a name="YOKOGAWA">YOKOGAWA</a></h2>
 <br>
 <table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
 <tr>
@@ -177,11 +267,30 @@
 </tr>
 <tr>
 <td>Проприетарное алго расчета контрольной суммы CkSum</td>
-<td>Нет решения</td>
+<td>Currently NO solution.</td>
 </tr>
 </table>
 </div>
+</td></tr>
 
+<tr><td>
+<div align="center">
+<h2><a name="YOKOGAWA AQ7932 Emulation Software">YOKOGAWA AQ7932 Emulation Software</a></h2>
+<br>
+<table cellpadding=10 cellspacing=0 width="100%" border=1 align="left">
+<tr>
+<th>Problem</th><th>Solution</th>
+</tr>
+<tr>
+<td>Алгоритмы расчета контрольной суммы CkSum различны для форматов Bellcore SOR 1.00 (XMODEM) и Telcordia SOR 2.00 (CCITT)</td>
+<td>
+<CENTER><IMG SRC="yokogawa_100_xmodem.png" WIDTH=630 HEIGHT=754 BORDER=0></CENTER>
+<br>
+<CENTER><IMG SRC="yokogawa_200_ccitt.png" WIDTH=630 HEIGHT=754 BORDER=0></CENTER>
+<br>Currently NO solution.</td>
+</tr>
+</table>
+</div>
 </td></tr>
 
 </table>
@@ -189,7 +298,7 @@
 
 <tr><td>
 <hr>
-<em>&copy; Gazlan 2013 * gazlan@yandex.ru</em>
+<em>&copy; Gazlan 2013-2018 * gazlan@yandex.ru</em>
 <hr>
 </td></tr>
 
